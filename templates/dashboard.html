@@ -1,0 +1,18 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <p>Select an option below to proceed:</p>
+    <ul>
+        <li><a href="{{ url_for('create_event') }}">Create Event</a></li>
+        <li><a href="{{ url_for('list_events') }}">View Events</a></li>
+        <li><a href="{{ url_for('send_message_to_attendees') }}">Send Message to Attendees</a></li>
+    </ul>
+</body>
+</html>

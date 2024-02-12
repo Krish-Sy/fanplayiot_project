@@ -1,0 +1,42 @@
+<!-- templates/event_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details: {{ event.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='event_details_styles.css') }}">
+</head>
+<body>
+<h2>Event Details: {{ event.name }}</h2>
+<p>Date: {{ event.event_date }}</p>
+<p>Attendees: {{ attendees|length }}</p>
+
+<form method="post">
+    <label for="zoom_link">Zoom Link:</label>
+    <input type="text" id="zoom_link" name="zoom_link" value="{{ event.zoom_link }}"><br>
+
+    <label>Interactive Links:</label>
+    <div id="interactive_links">
+        {% for link in event.interactive_links.split(',') %}
+            <input type="text" name="interactive_links[]" value="{{ link }}"><br>
+        {% endfor %}
+    </div>
+    <button type="button" onclick="addInputField()">Add More Links</button><br>
+
+    <label for="other_details">Other Details:</label>
+    <textarea id="other_details" name="other_details">{{ event.other_details }}</textarea><br>
+
+    <input type="submit" value="Update Event">
+</form>
+<a href="{{ url_for('show_appropriate_questions', event_id=event_id) }}" class="button">View Questions</a>
+<script>
+function addInputField() {
+    var container = document.getElementById("interactive_links");
+    var input = document.createElement("input");
+    input.type = "text";
+    input.name = "interactive_links[]";
+    container.appendChild(input);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 1em;
+    text-align: center; 
+}
+
+p {
+    font-size: 1rem; 
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2em auto; 
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #444; 
+}
+
+input[type="text"],
+textarea {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 1em; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+button,
+input[type="submit"] {
+    background-color: #234a9e;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto; 
+}
+
+button:hover,
+input[type="submit"]:hover {
+    color: black;
+    background-color: #f2b615;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[type="button"] {
+    padding: 5px 10px;
+    background-color: #6c757d; 
+    margin-bottom: 2em; 
+    font-size: smaller;
+}
+
+button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+.button {
+    display: inline-block;
+    background-color: #234a9e;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight:600;
+    transition: background-color 0.3s;
+    margin: 0 auto;
+}
+
+.button:hover {
+    color: black;
+    background-color: #f2b615;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+}

@@ -1,0 +1,19 @@
+<!-- templates/registration_events.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>All Events</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='registration_events_styles.css') }}">
+    </head>
+<body>
+    <h1>Events</h1>
+    <ul>
+        {% for event in events %}
+            <li>
+                <a href="{{ url_for('register_attendee', event_id=event.id) }}">{{ event.name }}</a> Date: {{ event.event_date }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

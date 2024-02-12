@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='list_event_styles.css') }}">
+</head>
+<body>
+<h1>Edit Events</h1>
+<ul>
+    {% for event in events %}
+        <li><a href="{{ url_for('event_details', event_id=event.id) }}">{{ event.name }}</a> Date: {{ event.event_date }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

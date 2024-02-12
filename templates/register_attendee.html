@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register for {{ event.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register_attendee_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register for {{ event.name }}</h1>
+        <p class="description">{{ event.other_details }}</p>
+        <form method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <br><br>
+            <label for="question">QnA:</label>
+            <textarea id="question" name="question" rows="4" cols="50"></textarea>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

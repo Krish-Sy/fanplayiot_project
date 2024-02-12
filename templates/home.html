@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Event Management Project</h1>
+    <div class="button-container">
+        <a href="{{ url_for('login') }}"><button>Login</button></a>
+        <a href="{{ url_for('registration_events') }}"><button>Registration Links</button></a>
+    </div>
+</body>
+</html>

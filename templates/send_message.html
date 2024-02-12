@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Message to Event Attendees</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='send_message_styles.css') }}">
+</head>
+<body>
+    <h2>Send Mail to Event Attendees</h2>
+    <form action="/send_message_to_attendees" method="post">
+        <label for="event">Choose an event:</label>
+        <select id="event" name="event_id" required>
+            {% for event in events %}
+            <option value="{{ event.id }}">{{ event.name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="subject">Subject:</label>
+        <textarea id="subject" name="subject" rows="4" cols="20" required></textarea>
+        <br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        <br><br>
+        <input type="submit" value="Send Message">
+    </form>
+</body>
+</html>

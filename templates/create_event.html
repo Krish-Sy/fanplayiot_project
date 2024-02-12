@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='create_event_styles.css') }}">
+    <script>
+        // Function to dynamically add new input fields for interactive links
+        function addLinkField() {
+            const container = document.getElementById('linksContainer');
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'interactive_links';
+            container.appendChild(input);
+            container.appendChild(document.createElement('br'));
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+    <h2>Create New Event</h2>
+    <form action="" method="post">
+        <label for="name">Event Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="zoom_link">Zoom/Discord Link:</label><br>
+        <input type="text" id="zoom_link" name="zoom_link"><br><br>
+
+        <label>Interactive Activities Links:</label><br>
+        <div id="linksContainer">
+            <input type="text" name="interactive_links"><br>
+        </div>
+        <button type="button" onclick="addLinkField()">Add More Links</button><br><br>
+
+        <label for="event_date">Date of Event:</label><br>
+        <input type="date" id="event_date" name="event_date" required><br><br>
+
+        <label for="other_details">Other Details:</label><br>
+        <textarea id="other_details" name="other_details"></textarea><br><br>
+
+        <input type="submit" value="Create Event">
+    </form>
+    </div>
+</body>
+</html>
